@@ -112,12 +112,17 @@
         </ul>
     </nav>
     <div id="wrap">
+        <!-- если делаем лендинг, то sidebar можно удалить (и из стилей тоже) -->
         <div id="sidebar">!</div>
         <main id="container">
             <section id="about"></section>
             <section id="info"></section>
             <section id="reports"></section>
             <section id="contacts">
+                <!-- для чего столько вложенных div'ов?
+            попробуй сделать блок контактов в 2 строки и 2 столбца с помощью flexbox
+            Адрес   График работы
+            E-mail  Телефоны -->
                 <div class="contact" id="contact">
                     <div class="contact_body">
                         <div class="contact_top">
@@ -159,8 +164,13 @@
                 </div>
     </div>
     </section>
+    <!-- для карты сделай еще одну секцию и назови ее "Как добраться", карту размести по центру -->
     </main>
     <footer class="page-footer">
+        <!-- внутри page-footer сделай расположение блоков тоже flexbox-ами
+        абсолютное позиционирование блока adress тут не нужно
+        вместо этого разнеси footerInfo и adress с помощью
+        justify-content:space-evenly, например -->
         <div class="copyright">©
             <a href="http://www.bestmedico.ru">www.bestmedico.ru</a> 2014—2018
         </div>
