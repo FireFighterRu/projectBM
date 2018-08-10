@@ -11,6 +11,7 @@
     <style>
         .container {}
 
+
         .page-footer {
             position: fixed;
             left: 0;
@@ -21,19 +22,23 @@
             padding: 10px;
             display: flex;
             flex-direction: row;
+            justify-content: space-evenly
         }
 
         .nav-link {
             text-decoration: none;
+            display: block;
+            padding: 0;
+            color: #3d1000;
+            transition: transform 0.3s;
         }
-
 
         #logo {
-            width: 40px;
-            height: 40px;
-            background: green;
+            width: 50px;
+            height: 50px;
+            top: 0px;
+            left: 0px;
         }
-
 
         #nav-flex {
             position: fixed;
@@ -52,12 +57,18 @@
         #nav-menu {
             display: flex;
             list-style: none;
+            flex-direction: row;
         }
 
         .nav-item {
             padding: 1em;
-            background: red;
             font-family: Roboto, Arial, Helvetica, sans-serif;
+        }
+
+        .nav-item:hover {
+            color: orange;
+            transition: color 1s linear, border-bottom 1s linear;
+            border-bottom: 4px solid orange;
         }
 
         #links {
@@ -69,10 +80,6 @@
             flex-direction: row;
             margin-top: 100px;
             ;
-        }
-
-        #sidebar {
-            background: yellow;
         }
 
         .copyright {
@@ -88,6 +95,19 @@
 
         .adress {
             color: white;
+            justify-content: space-evenly;
+        }
+
+        .MapPosition {
+            position: fixed;
+            display: flex;
+            right: 50px;
+        }
+
+        #contacts {
+            position: fixed;
+            bottom: 100px;
+            display: flex;
         }
     </style>
 </head>
@@ -112,65 +132,43 @@
         </ul>
     </nav>
     <div id="wrap">
-        <!-- если делаем лендинг, то sidebar можно удалить (и из стилей тоже) -->
-        <div id="sidebar">!</div>
         <main id="container">
-            <section id="about"></section>
+            <section id="about"> </section>
             <section id="info"></section>
             <section id="reports"></section>
+            <section id="MapPosition">
+                <iframe src="https://yandex.ru/map-widget/v1/-/CBuLMHRTLD" width="560" height="400" frameborder="1" allowfullscreen="true"></iframe>
+            </section>
             <section id="contacts">
-                <!-- для чего столько вложенных div'ов?
-            попробуй сделать блок контактов в 2 строки и 2 столбца с помощью flexbox
-            Адрес   График работы
-            E-mail  Телефоны -->
-                <div class="contact" id="contact">
-                    <div class="contact_body">
-                        <div class="contact_top">
-                            <ul>
-                                <li>
-                                    <b>Адрес</b>
-                                </li>
-                                <li>108811 г.Москва, г.Московский</li>
-                                <li>ул.Радужная, д.2, помещение1</li>
-                            </ul>
-                        </div>
-                        <div class="contacts">
-                            <div>
-                                <ul>
-                                    <li>
-                                        <b>График работы</b>
-                                    </li>
-                                    <li>Вт-Сб: 9:00-20:00</li>
-                                    <li>Вс-Пн: Выходные</li>
-                                </ul>
-                                <ul>
-                                    <li>
-                                        <b>E-mail:</b>
-                                    </li>
-                                    <li>info@bestmedico.ru</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <ul>
-                                    <li>
-                                        <b>Телефоны</b>
-                                    </li>
-                                    <li>+7 (495) 357-2003</li>
-                                    <li>+7 (926) 035-3503 (SMS, WhatsApp, Telegram)</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <table>
+                    <tr>
+                        <td>Адрес</td>
+                        <td>108811 г.Москва, г.Московский</td>
+                        <td>ул.Радужная, д.2, помещение1</td>
+                    </tr>
+                    <tr>
+                        <td>График работы</td>
+                        <td>Вт-Сб: 9:00-20:00</td>
+                        <td>Вс-Пн: Выходные</td>
+                    </tr>
+                    <tr>
+                        <td>E-mail:</td>
+                        <td>info@bestmedico.ru</td>
+                    </tr>
+                    <tr>
+                        <td>Телефоны</td>
+                        <td>+7 (495) 357-2003</td>
+                        <td>+7 (926) 035-3503 (SMS, WhatsApp, Telegram)
+                        </td>
+                    </tr>
+                </table>
     </div>
     </section>
-    <!-- для карты сделай еще одну секцию и назови ее "Как добраться", карту размести по центру -->
+    </div>
+
+
     </main>
     <footer class="page-footer">
-        <!-- внутри page-footer сделай расположение блоков тоже flexbox-ами
-        абсолютное позиционирование блока adress тут не нужно
-        вместо этого разнеси footerInfo и adress с помощью
-        justify-content:space-evenly, например -->
         <div class="copyright">©
             <a href="http://www.bestmedico.ru">www.bestmedico.ru</a> 2014—2018
         </div>
