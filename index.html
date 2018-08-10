@@ -10,8 +10,7 @@
     <script src="index.js" type="text/javascript"></script>
     <style>
         .container {}
-
-
+        
         .page-footer {
             position: fixed;
             left: 0;
@@ -24,7 +23,7 @@
             flex-direction: row;
             justify-content: space-evenly
         }
-
+        
         .nav-link {
             text-decoration: none;
             display: block;
@@ -32,14 +31,14 @@
             color: #3d1000;
             transition: transform 0.3s;
         }
-
+        
         #logo {
             width: 50px;
             height: 50px;
             top: 0px;
             left: 0px;
         }
-
+        
         #nav-flex {
             position: fixed;
             left: 0;
@@ -53,57 +52,60 @@
             justify-content: space-between;
             align-items: center;
         }
-
+        
         #nav-menu {
             display: flex;
             list-style: none;
             flex-direction: row;
         }
-
+        
         .nav-item {
             padding: 1em;
             font-family: Roboto, Arial, Helvetica, sans-serif;
+            /*border-bottom: 4px solid transparent;
+            с прозрачным бордером анимироваться будет только цвет, ширина бордера будет одна и та же
+            и кнопки не будут скакать*/
         }
-
+        
         .nav-item:hover {
             color: orange;
             transition: color 1s linear, border-bottom 1s linear;
             border-bottom: 4px solid orange;
         }
-
+        
         #links {
             height: 100%;
         }
-
+        
         #wrap {
             display: flex;
             flex-direction: row;
             margin-top: 100px;
             ;
         }
-
+        
         .copyright {
             color: #968c80;
             position: absolute;
             top: 0;
             right: 0;
         }
-
+        
         .phones {
             color: white;
         }
-
+        
         .adress {
             color: white;
             justify-content: space-evenly;
         }
-
+        
         .MapPosition {
             position: fixed;
             display: flex;
             right: 50px;
         }
-
+        
         #contacts {
             position: fixed;
             bottom: 100px;
@@ -137,9 +139,16 @@
             <section id="info"></section>
             <section id="reports"></section>
             <section id="MapPosition">
+                <!--у меня почему-то карта отображается пустым блоком
+                чтобы выровнять любой блок по центру (кроме абсолютно-позиционированных) задай ему margin:0 auto;
+            при этом у блока обязательно должны быть заданы ширина и высота-->
+
                 <iframe src="https://yandex.ru/map-widget/v1/-/CBuLMHRTLD" width="560" height="400" frameborder="1" allowfullscreen="true"></iframe>
             </section>
             <section id="contacts">
+                <!-- для contacts - flex-wrap:wrap; для его дочерних - width:50%
+                    дочерние - тоже флекс-боксы с flex-direction:column и выравнивание по обеим осям по центру
+                без таблиц, только флексбоксами-->
                 <table>
                     <tr>
                         <td>Адрес</td>
@@ -173,6 +182,9 @@
             <a href="http://www.bestmedico.ru">www.bestmedico.ru</a> 2014—2018
         </div>
         <div class="footerInfo">
+            <!--сделай из page-footer флексбокс из 3 одинаковых блоков (copyright, phones и adress),
+            footerInfo лишний,
+            посмотри свойства flex-grow, flex-shrink, flex-base-->
             <div class="phones">
                 <p>
                     <a href="tel:+74953572003">+7 (495) 357-20-03</a>
@@ -181,6 +193,8 @@
                 </p>
             </div>
             <div class="adress">
+                <!--незакрытый <p>, хотя он тут и не нужен
+                    классу adress назначен justify-content: space-evenly, но он не является флексбоксом-->
                 <p>г. Московский, ул. Радужная, д. 2
             </div>
         </div>
