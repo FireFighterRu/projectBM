@@ -9,6 +9,10 @@
     <link href="style.css" rel="stylesheet" type="text/css">
     <script src="index.js" type="text/javascript"></script>
     <style>
+        body {
+            padding-top: 80px;
+        }
+
         .container {}
 
         .page-footer {
@@ -25,6 +29,10 @@
             border-radius: 20px 10px 0 0;
         }
 
+        .page-footer a {
+            color: white
+        }
+
         .nav-link {
             text-decoration: none;
             display: block;
@@ -34,10 +42,7 @@
         }
 
         #logo {
-            width: 50px;
-            height: 50px;
-            top: 0px;
-            left: 0px;
+            height: 100%;
         }
 
         #nav-flex {
@@ -85,9 +90,6 @@
 
         .copyright {
             color: #968c80;
-            position: fixed;
-            top: 0;
-            right: 0;
         }
 
         .phones {
@@ -122,29 +124,38 @@
             text-align: center;
         }
 
+        #directions-ul {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 10px
+        }
+
+        #directions-ul a {
+            text-decoration: none;
+            color: black;
+        }
+
         .directions:hover {
             color: #3d1000;
             transition: color 1s linear, border-bottom 1s linear;
             border-bottom: 4px solid #3d1000;
         }
 
+        /*
         .directions {
             text-decoration: none;
+                        color: black;
             display: block;
             padding: 0;
-            color: black;
-            transition: transform 0.3s;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-column-gap: 10px;
 
+            transition: transform 0.3s;
         }
+*/
 
         .aboutus {
             color: #3d1000;
             border: 1px solid white;
-            text-align: center;
-            margin: 0;
+            margin: 0 auto;
             width: 50%
         }
 
@@ -158,16 +169,20 @@
             font-weight: bold;
             font-style: oblique;
         }
+
+        #directions-ul {
+            display: grid;
+        }
     </style>
 </head>
 
 <body>
     <nav id="nav-flex">
-        <div id="logo">
-            <a target="_blank" href="https://radikal.ru">
-                <img src="https://b.radikal.ru/b07/1808/f8/acfa51653fbc.png" />
-            </a>
-        </div>
+        <!--<div>
+            <a target="_blank" href="https://radikal.ru">-->
+        <img id="logo" src="https://b.radikal.ru/b07/1808/f8/acfa51653fbc.png" />
+        <!-- </a>
+        </div>-->
         <ul id="nav-menu">
             <li class="nav-item">
                 <a href="#about" class="nav-link">Направления</a>
@@ -186,46 +201,46 @@
     </nav>
     <main id="container">
         <section id="about">
-            <div class="directions">
-                <ul>
-                    <li class="directions-li">
-                        <a href="http://bestmedico.ru/uslugi/kosmetologiya/" class="directions">Косметология</a>
-                    </li>
-                    <li class="directions-li">
-                        <a href="http://bestmedico.ru/uslugi/terapiya/" class="directions">Терапия</a>
-                    </li>
-                    <li class="directions-li">
-                        <a href="http://bestmedico.ru/uslugi/gastroyenterologiya/" class="directions">Гастроэнторология</a>
-                    </li>
-                    <li class="directions-li">
-                        <a href="http://bestmedico.ru/uslugi/endokrinologiya/" class="directions">Эндокринология</a>
-                    </li>
-                    <li class="directions-li">
-                        <a href="http://bestmedico.ru/uslugi/nevrologiya/" class="directions">Неврология</a>
-                    </li>
-                    <li class="directions-li">
-                        <a href="http://bestmedico.ru/uslugi/fizioterapiya/" class="directions">Физиотерапия</a>
-                    </li>
-                    <li class="directions-li">
-                        <a href="http://bestmedico.ru/uslugi/dermatologiya/" class="directions">Дерматология</a>
-                    </li>
-                    <li class="directions-li">
-                        <a href="http://bestmedico.ru/uslugi/gomeopatiya/" class="directions">Гомеопатия</a>
-                    </li>
-                    <li class="directions-li">
-                        <a href="http://bestmedico.ru/uslugi/dietologiya/" class="directions">Диетология</a>
-                    </li>
-                    <li class="directions-li">
-                        <a href="http://bestmedico.ru/uslugi/trikhologiya/" class="directions">Трихология</a>
-                    </li>
-                    <li class="directions-li">
-                        <a href="http://bestmedico.ru/uslugi/dermatoskopiya/" class="directions">Дерматоскопия</a>
-                    </li>
-                    <li class="directions-li">
-                        <a href="http://bestmedico.ru/" class="directions">Перейти на сайт клиники</a>
-                    </li>
-                </ul>
-            </div>
+            <!--<div class="directions">-->
+            <ul id="directions-ul">
+                <li class="directions-li">
+                    <a href="http://bestmedico.ru/uslugi/kosmetologiya/" class="directions">Косметология</a>
+                </li>
+                <li class="directions-li">
+                    <a href="http://bestmedico.ru/uslugi/terapiya/" class="directions">Терапия</a>
+                </li>
+                <li class="directions-li">
+                    <a href="http://bestmedico.ru/uslugi/gastroyenterologiya/" class="directions">Гастроэнторология</a>
+                </li>
+                <li class="directions-li">
+                    <a href="http://bestmedico.ru/uslugi/endokrinologiya/" class="directions">Эндокринология</a>
+                </li>
+                <li class="directions-li">
+                    <a href="http://bestmedico.ru/uslugi/nevrologiya/" class="directions">Неврология</a>
+                </li>
+                <li class="directions-li">
+                    <a href="http://bestmedico.ru/uslugi/fizioterapiya/" class="directions">Физиотерапия</a>
+                </li>
+                <li class="directions-li">
+                    <a href="http://bestmedico.ru/uslugi/dermatologiya/" class="directions">Дерматология</a>
+                </li>
+                <li class="directions-li">
+                    <a href="http://bestmedico.ru/uslugi/gomeopatiya/" class="directions">Гомеопатия</a>
+                </li>
+                <li class="directions-li">
+                    <a href="http://bestmedico.ru/uslugi/dietologiya/" class="directions">Диетология</a>
+                </li>
+                <li class="directions-li">
+                    <a href="http://bestmedico.ru/uslugi/trikhologiya/" class="directions">Трихология</a>
+                </li>
+                <li class="directions-li">
+                    <a href="http://bestmedico.ru/uslugi/dermatoskopiya/" class="directions">Дерматоскопия</a>
+                </li>
+                <li class="directions-li">
+                    <a href="http://bestmedico.ru/" class="directions">Перейти на сайт клиники</a>
+                </li>
+            </ul>
+            <!--  </div>-->
         </section>
         <section id="info">
             <div class="aboutus">
